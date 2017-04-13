@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   post '/courses', to: 'courses#create'
   get '/courses/:id/edit', to: 'courses#edit', as: 'edit_course'
   patch '/courses/:id', to: 'courses#update'
+
+  get '/login', to: 'sessions#new', as: 'login'
+  post '/sessions', to: 'sessions#create', as: 'sessions'
+  delete '/logout', to: 'sessions#destroy', as: 'logout'
   #resources :courses, only: [:index]
 
   # The following is defined by resources

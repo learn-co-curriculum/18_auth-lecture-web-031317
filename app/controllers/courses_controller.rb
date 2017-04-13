@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  before_action :authorize_user, only: [:new, :create, :edit]
 
   def index
     @courses = Course.all
